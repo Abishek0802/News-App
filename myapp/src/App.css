@@ -10,6 +10,8 @@
   background-color: lightblue;
   height: fit-content;
   width: fit-content;
+  transition: 2s;
+  transform: rotateY(360deg);
 }
 .Product_List {
   display: flex;
@@ -26,4 +28,12 @@
   background-color: black;
   color: aliceblue;
   border-radius: 10px;
+}
+.Button2 {
+  color: aliceblue;
+  background-color: black;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  margin-top: 10px;
 }
