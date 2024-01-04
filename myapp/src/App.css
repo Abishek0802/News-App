@@ -1,0 +1,29 @@
+* {
+  padding: 10px;
+}
+
+.Header {
+  background-color: lightgray;
+  padding: 20px;
+}
+.Product {
+  background-color: lightblue;
+  height: fit-content;
+  width: fit-content;
+}
+.Product_List {
+  display: flex;
+  flex-direction: row;
+  row-gap: 10px;
+  column-gap: 20px;
+}
+.Product > img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+.Button {
+  background-color: black;
+  color: aliceblue;
+  border-radius: 10px;
+}
