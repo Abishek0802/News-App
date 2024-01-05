@@ -49,3 +49,13 @@
   height: fit-content;
   align-items: center;
 }
+.countries-container {
+  display: flex;
+}
+
+.country {
+  margin: 10px; /* Optional: Add margin between each country div */
+  padding: 10px;
+  background-color: #eb5160;
+  border-radius: 10px; /* Optional: Add a border for better visualization */
+}
