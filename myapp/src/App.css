@@ -59,3 +59,28 @@
   background-color: #eb5160;
   border-radius: 10px; /* Optional: Add a border for better visualization */
 }
+.productDis {
+  width: fit-content;
+  height: fit-content;
+  background-color: #93e5ab;
+  padding: 20px;
+}
+.productDis > img {
+  width: 200px;
+  height: 200px;
+}
+.APIdata {
+  width: fit-content;
+  height: fit-content;
+  background-color: #9c72c1;
+  padding: 20px;
+}
+.APIdata > img {
+  width: 200px;
+  height: 200px;
+}
+.Displaydata {
+  background-color: #9c72c1;
+  width: fit-content;
+  height: fit-content;
+}

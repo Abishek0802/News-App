@@ -23,7 +23,7 @@ function Maping() {
           return (
             <div className="country" key={country.id}>
               <h1>{country.name}</h1>
-              <p>{country.capital}</p>{" "}
+              <p>{country.capital}</p>
             </div>
 
             //
