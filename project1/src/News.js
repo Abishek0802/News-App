@@ -4,11 +4,17 @@ function News(props) {
     <>
       <div className="news">
         <div className="news-img">
-          <img src={props.article.urlToImage} alt="" />
+          {props.article.urlToImage !== null ? (
+            <img src={props.article.urlToImage} alt="" />
+          ) : (
+            <img src="https://icon-library.com/images/no-picture-available-icon/no-picture-available-icon-1.jpg"></img>
+          )}
         </div>
         <h2>{props.article.title}</h2>
-        <p>{props.article.description?.substring(0, 50).concat("...")}</p>
-        <a href={props.article.url}>Read More</a>
+        <p>{props.article.description?.substring(0, 100).concat("...")}</p>
+        <a href={props.article.url} target="blank">
+          Read More
+        </a>
         <div className="source">
           <p>Author:{props.article.author}</p>
           <p>{props.article.source.name}</p>

@@ -1,52 +1,98 @@
 .news {
-  width: 22%;
+  width: 100%;
   padding: 20px;
-  background-color: rgb(235, 231, 231);
+  background-color: rgb(187, 175, 175);
   display: flex;
   flex-direction: column;
   row-gap: 15px;
-  border-radius: 1%;
+
   overflow: hidden;
+  border-radius: 10px;
 }
+
 .news-articles {
   width: 100%;
-  padding: 30px 5%;
-  /* background-color: red; */
+  padding: 15px 5%;
   display: flex;
-  column-gap: 4%;
   flex-wrap: wrap;
   row-gap: 20px;
+
+  justify-content: space-between;
 }
+
 .header {
   width: 100%;
   padding: 20px 5%;
   background-color: rgb(120, 116, 116);
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
+
+.header h1 {
+  position: relative;
+  left: 20%;
+  bottom: 14px;
+}
+
 input {
-  width: 20%;
+  width: 100%;
+  max-width: 300px; /* Set a maximum width for larger screens */
   padding: 10px;
   font-size: 15px;
   border-radius: 10px;
   outline: none;
+  margin-bottom: 10px;
 }
+
 .news-img {
   width: 100%;
   height: 200px;
-  /* background-color: blue; */
   border-radius: 5%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .news-img img {
+  width: 100%;
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
 }
+
 .source {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   color: black;
+}
+
+@media screen and (min-width: 600px) {
+  .news {
+    width: 28%;
+
+    /* Adjust the width for larger screens */
+  }
+
+  .news-articles {
+    padding: 20px 5%;
+  }
+
+  .header {
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: space-between;
+  }
+  .header h1 {
+    position: none;
+    left: 0px;
+    bottom: 0%;
+  }
+  .news-img {
+    border-radius: 10px;
+  }
+  .news-img img {
+    object-fit: cover;
+  }
 }

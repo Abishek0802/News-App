@@ -4,41 +4,56 @@ import News from "./News";
 
 function App() {
   let [articles, setArticles] = useState([]);
+  let [category, setCategory] = useState("india");
 
   useEffect(() => {
     fetch(
-      "https://newsapi.org/v2/everything?q=apple&from=2024-01-06&apiKey=74d8d0760b414804ba8e57debfe8638e"
+      `https://newsapi.org/v2/everything?q=${category}&from=2024-01-06&to=2024-01-06&sortBy=popularity&apiKey=87a837d3f8c546e083a7da2181c6351f`
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.articles);
-        setArticles(data.articles);
+        if (data.articles) {
+          console.log(data.articles);
+          setArticles(data.articles);
+        } else {
+          console.error("Unexpected response format:", data);
+          setArticles([]);
+        }
       })
       .catch((error) => {
         console.log(error);
+        setArticles([]);
       });
-  }, []);
+  }, [category]);
 
   return (
     <>
       <div className="App">
         <header className="header">
           <h1>News App</h1>
-          <input type="text" placeholder="search news" />
+          <input
+            type="text"
+            onChange={(event) => {
+              if (event.target.value !== "") {
+                setCategory(event.target.value);
+              } else {
+                setCategory("india");
+              }
+            }}
+            placeholder="search news"
+          />
         </header>
         <section className="news-articles">
           {" "}
-          {articles.map((article, index) => {
-            return <News key={index} article={article} />;
-          })}
+          {articles.length !== 0 ? (
+            articles.map((article, index) => {
+              return <News key={index} article={article} />;
+            })
+          ) : (
+            <h3>Search Not Found</h3>
+          )}
         </section>
       </div>
-
-      {/* <div style={{ backgroundColor: "gray" }}>
-        {articles.map((article, index) => (
-          <p key={index}>{article.author}</p>
-        ))}
-      </div> */}
     </>
   );
 }
