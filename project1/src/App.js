@@ -4,8 +4,8 @@ import News from "./News";
 
 function App() {
   const [articles, setArticles] = useState([]);
-  const [category, setCategory] = useState("world");
-  const [categoryDis, setCategoryDis] = useState("india");
+  const [category, setCategory] = useState("");
+  const [categoryDis, setCategoryDis] = useState("world News");
 
   useEffect(() => {
     fetchNews();
@@ -32,29 +32,39 @@ function App() {
   };
 
   const handleSearch = () => {
-    setCategoryDis(category !== "" ? category : "india");
+    setCategoryDis(category !== "" ? category : "world News");
   };
 
   return (
     <>
       <div className="App">
-        <header className="header">
-          <h1>News App</h1>
-          <input
-            type="text"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            placeholder="search news"
-          />
-          <button onClick={handleSearch}>Search</button>
+        <header style={{}}>
+          {" "}
+          <div className="header">
+            <h1>News App</h1>{" "}
+          </div>
+          <div className="header">
+            {" "}
+            <input
+              style={{ marginLeft: "200px" }}
+              type="text"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              placeholder="search news"
+            />
+            <button className="btn" onClick={handleSearch}>
+              Search
+            </button>
+          </div>
         </header>
+
         <section className="news-articles">
           {articles.length !== 0 ? (
             articles.map((article, index) => (
               <News key={index} article={article} />
             ))
           ) : (
-            <h3>Search Not Found</h3>
+            <h3>Search for the News</h3>
           )}
         </section>
       </div>

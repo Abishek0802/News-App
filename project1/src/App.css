@@ -9,7 +9,9 @@
   overflow: hidden;
   border-radius: 10px;
 }
-
+header {
+  display: flex;
+}
 .news-articles {
   width: 100%;
   padding: 15px 5%;
@@ -82,8 +84,9 @@ input {
   .header {
     flex-wrap: nowrap;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
+
   .header h1 {
     position: none;
     left: 0px;
@@ -94,5 +97,10 @@ input {
   }
   .news-img img {
     object-fit: cover;
+  }
+  .btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
   }
 }
