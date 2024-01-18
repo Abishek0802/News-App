@@ -7,7 +7,10 @@ function News(props) {
           {props.article.urlToImage !== null ? (
             <img src={props.article.urlToImage} alt="" />
           ) : (
-            <img src="https://icon-library.com/images/no-picture-available-icon/no-picture-available-icon-1.jpg"></img>
+            <img
+              alt="news"
+              src="https://icon-library.com/images/no-picture-available-icon/no-picture-available-icon-1.jpg"
+            ></img>
           )}
         </div>
         <h2>{props.article.title}</h2>
