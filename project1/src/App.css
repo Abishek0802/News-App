@@ -82,7 +82,7 @@ input {
   .header {
     flex-wrap: nowrap;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .header h1 {
     position: none;

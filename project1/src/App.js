@@ -3,12 +3,17 @@ import { useEffect, useState } from "react";
 import News from "./News";
 
 function App() {
-  let [articles, setArticles] = useState([]);
-  let [category, setCategory] = useState("india");
+  const [articles, setArticles] = useState([]);
+  const [category, setCategory] = useState("world");
+  const [categoryDis, setCategoryDis] = useState("india");
 
   useEffect(() => {
+    fetchNews();
+  }, [categoryDis]);
+
+  const fetchNews = () => {
     fetch(
-      `https://newsapi.org/v2/everything?q=${category}&from=2024-01-16&to=2024-01-16&sortBy=popularity&apiKey=87a837d3f8c546e083a7da2181c6351f`
+      `https://newsapi.org/v2/everything?q=${categoryDis}&from=2024-01-16&to=2024-01-16&sortBy=popularity&apiKey=87a837d3f8c546e083a7da2181c6351f`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -24,7 +29,11 @@ function App() {
         console.log(error);
         setArticles([]);
       });
-  }, [category]);
+  };
+
+  const handleSearch = () => {
+    setCategoryDis(category !== "" ? category : "india");
+  };
 
   return (
     <>
@@ -33,22 +42,17 @@ function App() {
           <h1>News App</h1>
           <input
             type="text"
-            onChange={(event) => {
-              if (event.target.value !== "") {
-                setCategory(event.target.value);
-              } else {
-                setCategory("india");
-              }
-            }}
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
             placeholder="search news"
           />
+          <button onClick={handleSearch}>Search</button>
         </header>
         <section className="news-articles">
-          {" "}
           {articles.length !== 0 ? (
-            articles.map((article, index) => {
-              return <News key={index} article={article} />;
-            })
+            articles.map((article, index) => (
+              <News key={index} article={article} />
+            ))
           ) : (
             <h3>Search Not Found</h3>
           )}
