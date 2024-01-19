@@ -69,6 +69,9 @@ input {
   justify-content: space-between;
   color: black;
 }
+.btn {
+  border-radius: 5px;
+}
 
 @media screen and (min-width: 600px) {
   .news {
@@ -82,15 +85,15 @@ input {
   }
 
   .header {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     display: flex;
-    justify-content: space-between;
   }
 
   .header h1 {
     position: none;
     left: 0px;
     bottom: 0%;
+    right: 100%;
   }
   .news-img {
     border-radius: 10px;
@@ -99,8 +102,11 @@ input {
     object-fit: cover;
   }
   .btn {
-    width: 100px;
-    height: 40px;
+    width: fit-content;
+    height: 45px;
     border-radius: 10px;
+  }
+  .date {
+    width: fit-content;
   }
 }

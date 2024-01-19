@@ -1,4 +1,5 @@
 import "./App.css";
+import Dark from "./Dark-Mode/Dark";
 
 import Header from "./Home/Header";
 import Product_List from "./Home/Product_List";
@@ -10,12 +11,13 @@ import ComponentOutput from "./Trans-data-field-API/ComponentOutput";
 function App() {
   return (
     <>
-      <Header />
+      <Dark />
+      {/* <Header />
       <Product_List />
       <Result />
       <Maping />
       <FakeAPI />
-      <ComponentOutput />
+      <ComponentOutput /> */}
     </>
   );
 }
