@@ -1,6 +1,10 @@
 * {
   padding: 10px;
 }
+.outer {
+  background-color: rgb(212, 97, 97);
+  border-radius: 10px;
+}
 
 .Header {
   background-color: lightgray;
@@ -83,4 +87,78 @@
   background-color: #9c72c1;
   width: fit-content;
   height: fit-content;
+}
+/* //Dark mode */
+.Nav {
+  /* background-color: antiquewhite; */
+  border-radius: 10px;
+  padding: 10px; /* Add padding for better spacing on smaller screens */
+}
+
+.NavList {
+  display: flex;
+  flex-direction: row-reverse;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.NavList li {
+  margin-right: 20px;
+}
+button {
+  border-radius: 10px;
+  border: #9c72c1 solid 2px;
+}
+.div1 {
+  background-color: #93e5ab;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  border-radius: 10px;
+  height: 500px;
+  row-gap: 10px;
+}
+.div1 > div {
+  background-color: #316d42;
+  width: 300px;
+  border-radius: 10px;
+  height: 420px;
+  margin-top: 20px;
+}
+.div2 {
+  background-color: bisque;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+.footer {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #93e5ab;
+  margin-top: 5%;
+  border-radius: 10px;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 600px) {
+  .NavList {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .NavList li {
+    margin: 5px 0;
+    margin-right: 0; /* Reset margin for better spacing in a column layout */
+  }
+  button {
+    border-radius: 10px;
+    border: #9c72c1 solid 2px;
+  }
+  .div1 > div {
+    height: 90px;
+    margin-top: 0px;
+  }
 }
