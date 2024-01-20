@@ -1,6 +1,22 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "animate.css";
+import { Link, useNavigate } from "react-router-dom";
 function Dark() {
+  const [next, setNext] = useState(""); // State to control animation class
+  const [HeadLink, setHeadLink] = useState("");
+  const navigate = useNavigate();
+  useEffect(() => {
+    AOS.init();
+  }, []);
+  const Linkcolor = () => {
+    setHeadLink({ color: "white" });
+  };
+  const fade = () => {
+    setNext("animate__animated animate__fadeOut");
+  };
+
   const [theme, setTheme] = useState({
     backgroundColor: "antiquewhite",
     color: "black",
@@ -20,6 +36,7 @@ function Dark() {
     color: "black",
   });
   const handleSubmit = () => {
+    Linkcolor();
     setDiv2((prevDiv2) => ({
       backgroundColor:
         prevDiv2.backgroundColor === " bisque" ? "black" : " bisque",
@@ -46,26 +63,73 @@ function Dark() {
       color: prevTheme.color === "black" ? "white" : "black",
     }));
   };
+  const handleLinkClick = () => {
+    fade();
+    setTimeout(() => {
+      navigate("/About");
+    }, 1000);
+  };
 
   return (
     <>
-      <div style={outer} className="outer">
+      <div className={`${next}`} style={outer} id="outer">
         <header style={theme} className="Nav">
           <ul className="NavList">
             <button onClick={handleSubmit}>Dark Mode</button>
-            <li>About Us</li>
+            <li>
+              <Link
+                style={{ ...HeadLink, textDecoration: "none" }}
+                onClick={handleLinkClick}
+              >
+                About Us
+              </Link>
+            </li>
             <li>Contact Us</li>
             <li>Carrier</li>
             <li>Home</li>
           </ul>
         </header>
         <div style={div1} className="div1">
-          <div style={cards}>card1</div>
-          <div style={cards}>card2</div>
-          <div style={cards}>card3</div>
-          <div style={cards}>card4</div>
+          <div
+            className=" "
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            style={cards}
+          >
+            card1
+          </div>
+          <div
+            className=" "
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            style={cards}
+          >
+            card2
+          </div>
+          <div
+            className="  "
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            style={cards}
+          >
+            card3
+          </div>
+          <div
+            className=" "
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            style={cards}
+          >
+            card4
+          </div>
         </div>
-        <div style={div2} className="div2">
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-pl
+          data-aos-duration="2000"
+          style={div2}
+          className="div2"
+        >
           <h1>Header Content</h1>{" "}
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia

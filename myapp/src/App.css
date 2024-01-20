@@ -1,7 +1,7 @@
 * {
   padding: 10px;
 }
-.outer {
+#outer {
   background-color: rgb(212, 97, 97);
   border-radius: 10px;
 }
@@ -101,10 +101,12 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  text-decoration: none;
 }
 
 .NavList li {
   margin-right: 20px;
+  text-decoration: none;
 }
 button {
   border-radius: 10px;
@@ -147,10 +149,12 @@ button {
   .NavList {
     flex-direction: column;
     align-items: flex-start;
+    text-decoration: none;
   }
 
   .NavList li {
     margin: 5px 0;
+    text-decoration: none;
     margin-right: 0; /* Reset margin for better spacing in a column layout */
   }
   button {
