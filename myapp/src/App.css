@@ -144,6 +144,32 @@ button {
   border-radius: 10px;
   justify-content: space-evenly;
 }
+.form {
+  width: fit-content;
+  height: fit-content;
+  background-color: #b39598;
+  border-radius: 10px;
+  position: relative;
+  left: 38%;
+  top: 200px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  color: black;
+  align-items: center;
+  padding: 20px;
+}
+.form > h1 {
+  text-align: center;
+  font-size: larger;
+  font-weight: 600;
+}
+.form > button {
+  width: fit-content;
+}
+.form > input {
+  width: 300px;
+}
 
 @media screen and (max-width: 600px) {
   .NavList {
@@ -164,5 +190,20 @@ button {
   .div1 > div {
     height: 90px;
     margin-top: 0px;
+  }
+  .form {
+    width: fit-content;
+    height: fit-content;
+    background-color: #b39598;
+    border-radius: 10px;
+    position: relative;
+    left: 10px;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .form > input {
+    width: 200px;
   }
 }

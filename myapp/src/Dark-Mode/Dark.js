@@ -11,7 +11,9 @@ function Dark() {
     AOS.init();
   }, []);
   const Linkcolor = () => {
-    setHeadLink({ color: "white" });
+    setHeadLink((prevHeaderLink) => ({
+      color: prevHeaderLink.color === "white" ? "black" : "white",
+    }));
   };
   const fade = () => {
     setNext("animate__animated animate__fadeOut");
@@ -81,7 +83,7 @@ function Dark() {
                 style={{ ...HeadLink, textDecoration: "none" }}
                 onClick={handleLinkClick}
               >
-                About Us
+                Login
               </Link>
             </li>
             <li>Contact Us</li>
