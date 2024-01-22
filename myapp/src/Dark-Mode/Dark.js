@@ -132,7 +132,7 @@ function Dark() {
           style={div2}
           className="div2"
         >
-          <h1>Header Content</h1>{" "}
+          <h1>Header Content</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
             cum in praesentium cumque quo consequuntur incidunt nulla vitae,

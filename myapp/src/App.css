@@ -169,6 +169,7 @@ button {
 }
 .form > input {
   width: 300px;
+  color: white;
 }
 
 @media screen and (max-width: 600px) {
@@ -204,6 +205,11 @@ button {
     row-gap: 10px;
   }
   .form > input {
-    width: 200px;
+    width: 300x;
+  }
+  .form > p {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
 }
