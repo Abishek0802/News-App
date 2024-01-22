@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -33,6 +34,13 @@ function Login() {
     if (Object.keys(errors).length === 0) {
       // Proceed with login logic
       console.log("Logging in...", { email, password });
+      alert(`Login successful!\nEmail: ${email}\nPassword: ${password}`);
+
+      // Redirect to the initial route (replace "/About" with your desired route)
+      navigate("/About");
+      // Reset the input values to empty strings
+      setEmail("");
+      setPassword("");
     } else {
       // Display validation errors in an alert
       alert(Object.values(errors).join("\n"));

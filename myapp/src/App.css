@@ -135,6 +135,9 @@ button {
   margin-top: 50px;
   border-radius: 10px;
 }
+.div2 > h1 {
+  font-size: xx-large;
+}
 .footer {
   list-style-type: none;
   display: flex;
@@ -161,7 +164,7 @@ button {
 }
 .form > h1 {
   text-align: center;
-  font-size: larger;
+  font-size: x-large;
   font-weight: 600;
 }
 .form > button {
@@ -198,14 +201,14 @@ button {
     background-color: #b39598;
     border-radius: 10px;
     position: relative;
-    left: 10px;
+    left: 0px;
     top: 90px;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
   }
   .form > input {
-    width: 300x;
+    width: 300px;
   }
   .form > p {
     display: flex;
