@@ -2,8 +2,6 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import News from "./News";
 
-// ... (imports)
-
 function App() {
   const [articles, setArticles] = useState([]);
   const [category, setCategory] = useState("");
@@ -83,6 +81,3 @@ function App() {
 }
 
 export default App;
-
-
-
